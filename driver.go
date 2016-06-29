@@ -191,8 +191,8 @@ func (d *glusterfsDriver) unmountVolume(target string) error {
 }
 
 func (d glusterfsDriver) Capabilities(r volume.Request) volume.Response {
-	return volume.Response{Capability: {
-    Scope: "global"
-  }}
+	result := volume.Capability{
+		Scope: "global"
+	}
+	return volume.Response{Capabilities: result}
 }
-
